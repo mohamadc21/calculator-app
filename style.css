@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&&display=swap");
+
+:root {
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --del-reset-bg: hsl(225, 21%, 49%);
+  --del-reset-shadow: hsl(224, 28%, 35%);
+  --equal-togglebtn-bg: hsl(6, 63%, 50%);
+  --equal-togglebtn-shadow: hsl(6, 70%, 34%);
+  --number-bg: hsl(30, 25%, 89%);
+  --number-shadow: hsl(28, 16%, 65%);
+  --number-color: hsl(221, 14%, 31%);
+  --del-reset-color: hsl(0, 0%, 100%);
+  --equal-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.5rem 0 2rem;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+body.theme2 {
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+  --del-reset-bg: hsl(185, 42%, 37%);
+  --del-reset-shadow: hsl(185, 58%, 25%);
+  --equal-togglebtn-bg: hsl(25, 98%, 40%);
+  --equal-togglebtn-shadow: hsl(25, 99%, 27%);
+  --number-bg: hsl(45, 7%, 89%);
+  --number-shadow: hsl(35, 11%, 61%);
+  --number-color: hsl(60, 10%, 19%);
+  --del-reset-color: hsl(0, 0%, 100%);
+  --equal-color: hsl(0, 0%, 100%);
+  --text-color: hsl(60, 10%, 19%);
+}
+body.theme3 {
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --del-reset-bg: hsl(281, 89%, 26%);
+  --del-reset-shadow: hsl(285, 91%, 52%);
+  --equal-togglebtn-bg: hsl(176, 100%, 44%);
+  --equal-togglebtn-shadow: hsl(177, 92%, 70%);
+  --number-bg: hsl(268, 47%, 21%);
+  --number-shadow: hsl(290, 70%, 36%);
+  --number-color: hsl(52, 100%, 62%);
+  --del-reset-color: hsl(0, 0%, 100%);
+  --equal-color: hsl(198, 20%, 13%);
+  --text-color: hsl(52, 100%, 62%);
+}
+
+.container {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+
+.container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.theme {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.2rem;
+}
+
+.theme .theme-title {
+  font-size: 11px;
+  margin-bottom: 7px;
+  letter-spacing: 1px;
+}
+
+.theme .toggle-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.toggle-wrapper .toggle-nums {
+  font-size: 13px;
+  position: absolute;
+  top: -18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.toggle-wrapper .toggle {
+  width: 70px;
+  height: 27px;
+  border-radius: 30px;
+  background-color: var(--toggle-keypad-bg);
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle .toggle-opt {
+  width: 33.33%;
+  height: 100%;
+  position: absolute;
+}
+
+.toggle .first {
+  left: 0;
+}
+
+.toggle .second {
+  left: 34%;
+}
+
+.toggle .third {
+  left: initial;
+  right: 0;
+}
+
+.toggle .circle {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--equal-togglebtn-bg);
+  transition: .2s ease;
+}
+
+.toggle .circle.theme2 {
+  left: 50%;
+}
+
+.toggle .circle.theme3 {
+  left: 80%;
+}
+
+.container .output {
+  background-color: var(--screen-bg);
+  border: none;
+  outline: none;
+  height: 90px;
+  border-radius: 7px;
+  color: var(--text-color);
+  font-size: 2rem;
+  text-align: right;
+  padding: 1.8rem 1.6rem;
+  resize: none;
+}
+
+.output::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 50px;
+}
+
+.output::-webkit-scrollbar-thumb {
+  background-color: var(--del-reset-bg);
+}
+
+.container .calc {
+  background-color: var(--toggle-keypad-bg);
+  padding: 1.2rem 1.2rem 1.5rem;
+  border-radius: 7px;
+}
+
+.calc button {
+  transition: 0.2s;
+}
+
+.calc button:hover {
+  opacity: 0.8;
+}
+
+.calc button:active {
+  transform: scale(0.98);
+}
+
+.calc .calc-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calc-top button {
+  background-color: var(--number-bg);
+}
+
+.calc-top button,
+.calc-bottom button {
+  padding: 10px 0 7px;
+  color: var(--number-color);
+  font-size: 1.6rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  box-shadow: 0 3.5px var(--number-shadow);
+  cursor: pointer;
+}
+
+.calc .del,
+.calc .reset,
+.calc .equal {
+  font-size: 1.2rem;
+}
+
+.calc .calc-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.calc-bottom button {
+  padding: 12px 0 10px;
+}
+
+.calc-bottom .reset,
+.calc-top .del {
+  background-color: var(--del-reset-bg);
+  color: var(--del-reset-color);
+  box-shadow: 0 3.5px var(--del-reset-shadow);
+}
+
+.calc-bottom .equal {
+  background-color: var(--equal-togglebtn-bg);
+  color: var(--equal-color);
+  box-shadow: 0 3.5px var(--equal-togglebtn-shadow);
+}
+
+footer {
+  text-align: center;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--equal-togglebtn-bg);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
